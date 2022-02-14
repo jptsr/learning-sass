@@ -4,6 +4,8 @@
 }
 
 $color1: orange;
+$colorWhite: white;
+$colorBlack: black;
 
 body{
     font-family: "typo", sans-serif;
@@ -15,29 +17,75 @@ section{
     margin: auto;
 
     div{
+        margin-bottom: 0;
         .date{
             text-align: right;
+            margin-bottom: 0;
             span{
                 z-index: 1;
                 background-color: $color1;
             }
         }
     }
+
+    div{
+        p{
+            margin-top: 0;
+        }
+        .text{
+            margin: 30px;
+        }
+    }
 }
 
-/*section{
-    width: 400px;
-    margin: auto;
-    div{
-        img{
-            z-index: -1;
-        }
-        p{
-            text-align: right;
+.btns{
+    height: fit-content;
+    width: fit-content;
+    padding: 50px;
+    margin: 100px auto 50px auto;
+    background-color: $colorBlack;
+}
+
+.base_custom_btn{
+    width: 250px;
+    height: 50px;
+    color: $colorWhite;
+    background-color: $colorBlack;
+    border: 7px solid $colorWhite;
+    cursor: pointer;
+}
+
+.animation{
+    background-color: $colorWhite;
+    color: $colorBlack;
+    transition: all 0.4s ease-in-out;
+}
+
+.btns{
+    &__btn1{
+        @extend .base_custom_btn;
+        &:hover{
+            @extend .animation;
         }
     }
 
-    div{
-        width: 350px;
+    &__btn2{
+        @extend .base_custom_btn;
+        transform: scale(1);
+        transition: all 0.4s ease-in-out;
+        &:hover{
+            @extend .animation;
+            transform: scale(1.2);
+        }
     }
-}*/
+
+    &__btn3{
+        @extend .base_custom_btn;
+        transform: translateX(0px);
+        transition: all 0.4s ease-in-out;
+        &:hover{
+            @extend .animation;
+            transform: translateX(35px);
+        }
+    }
+}

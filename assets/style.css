@@ -13,8 +13,13 @@ section {
   margin: auto;
 }
 
+section div {
+  margin-bottom: 0;
+}
+
 section div .date {
   text-align: right;
+  margin-bottom: 0;
 }
 
 section div .date span {
@@ -22,20 +27,63 @@ section div .date span {
   background-color: orange;
 }
 
-/*section{
-    width: 400px;
-    margin: auto;
-    div{
-        img{
-            z-index: -1;
-        }
-        p{
-            text-align: right;
-        }
-    }
+section div p {
+  margin-top: 0;
+}
 
-    div{
-        width: 350px;
-    }
-}*/
+section div .text {
+  margin: 30px;
+}
+
+.btns {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 50px;
+  margin: 100px auto 50px auto;
+  background-color: black;
+}
+
+.base_custom_btn, .btns__btn1, .btns__btn2, .btns__btn3 {
+  width: 250px;
+  height: 50px;
+  color: white;
+  background-color: black;
+  border: 7px solid white;
+  cursor: pointer;
+}
+
+.animation, .btns__btn1:hover, .btns__btn2:hover, .btns__btn3:hover {
+  background-color: white;
+  color: black;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btns__btn2 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btns__btn2:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.btns__btn3 {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btns__btn3:hover {
+  -webkit-transform: translateX(35px);
+          transform: translateX(35px);
+}
 /*# sourceMappingURL=style.css.map */
