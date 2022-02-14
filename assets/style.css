@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "typo";
+  src: url("D:/Documents/BeCode/Exe/ReproducingLayout/reproducing-layout/resources/bahnschrift.ttf");
+}
+
+body {
+  font-family: "typo", sans-serif;
+  font-size: 1em;
+}
+/*# sourceMappingURL=style.css.map */
