@@ -8,32 +8,34 @@ body {
   font-size: 1em;
 }
 
-.principale, section div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 section {
   width: 400px;
   margin: auto;
 }
 
-section div img {
-  z-index: -1;
+section div .date {
+  text-align: right;
 }
 
-section div p {
-  text-align: center;
+section div .date span {
+  z-index: 1;
+  background-color: orange;
 }
+
+/*section{
+    width: 400px;
+    margin: auto;
+    div{
+        img{
+            z-index: -1;
+        }
+        p{
+            text-align: right;
+        }
+    }
+
+    div{
+        width: 350px;
+    }
+}*/
 /*# sourceMappingURL=style.css.map */
