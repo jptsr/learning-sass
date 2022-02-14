@@ -44,6 +44,7 @@ body{
 
     &__div1{
         margin-bottom: 0;
+
         .date{
             text-align: center;
             margin-bottom: 0;
@@ -98,7 +99,7 @@ body{
         &__time, &__comments{
             @extend .display_flex_timecomments;
             &__icone{
-                filter: grayscale(1);
+                filter: opacity(0.2);
             }
         }
     }
@@ -135,7 +136,7 @@ body{
 .btns{
     &__btn1{
         @extend .base_custom_btn;
-        
+
         &:hover{
             @extend .animation;
         }

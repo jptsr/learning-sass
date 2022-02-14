@@ -97,8 +97,8 @@ body {
 }
 
 .principale .timeComments__time__icone, .principale .timeComments__comments__icone {
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
+  -webkit-filter: opacity(0.2);
+          filter: opacity(0.2);
 }
 
 /*---------------------------------------------------------- CSS ANIMATION ------------------------------------------------------------*/
