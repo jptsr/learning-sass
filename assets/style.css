@@ -7,4 +7,33 @@ body {
   font-family: "typo", sans-serif;
   font-size: 1em;
 }
+
+.principale, section div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section {
+  width: 400px;
+  margin: auto;
+}
+
+section div img {
+  z-index: -1;
+}
+
+section div p {
+  text-align: center;
+}
 /*# sourceMappingURL=style.css.map */

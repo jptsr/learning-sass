@@ -7,3 +7,28 @@ body{
     font-family: "typo", sans-serif;
     font-size: 1em;
 }
+
+.principale{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section{
+    width: 400px;
+    margin: auto;
+    div{
+        @extend .principale;
+
+        img{
+            z-index: -1;
+        }
+    }
+
+    div{
+        p{
+            text-align: center;
+        }
+    }
+}
