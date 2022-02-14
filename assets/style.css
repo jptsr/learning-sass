@@ -3,38 +3,105 @@
   src: url("D:/Documents/BeCode/Exe/ReproducingLayout/reproducing-layout/resources/bahnschrift.ttf");
 }
 
+/* VARIABLES */
+/*---------------------------------------------------- SASS + CSS --------------------------------------------------------------*/
 body {
   font-family: "typo", sans-serif;
   font-size: 1em;
 }
 
-section {
+.display_flex, .principale .timeComments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.display_flex_timecomments, .principale .timeComments__time, .principale .timeComments__comments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.principale {
   width: 400px;
   margin: auto;
+  border: 0.1px solid #e0e0e0;
 }
 
-section div {
+.principale:hover {
+  border: none;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(202, 202, 202, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(202, 202, 202, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.principale__div1 {
   margin-bottom: 0;
 }
 
-section div .date {
-  text-align: right;
+.principale__div1 .date {
+  text-align: center;
   margin-bottom: 0;
+  position: relative;
 }
 
-section div .date span {
+.principale__div1 .date span {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: -390px;
+  left: 330px;
+  background-color: #ff6600;
+  border-radius: 50%;
   z-index: 1;
-  background-color: orange;
 }
 
-section div p {
+.principale__div2 {
+  position: relative;
+}
+
+.principale__div2 .photoWord {
+  position: absolute;
+  background-color: #9bbbff;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 15px;
+  top: -84px;
+}
+
+.principale__div2__divText {
+  background-color: white;
+  padding: 10px 45px 0 45px;
+  z-index: 1;
+  position: relative;
+}
+
+.principale__div2__divText top p {
+  text-align: justify;
+}
+
+.principale .timeComments {
+  gap: 35px;
+  color: #e0e0e0;
+  padding: 0 45px 45px 45px;
   margin-top: 0;
+  z-index: 1;
 }
 
-section div .text {
-  margin: 30px;
+.principale .timeComments__time__icone, .principale .timeComments__comments__icone {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
 }
 
+/*---------------------------------------------------------- CSS ANIMATION ------------------------------------------------------------*/
 .btns {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -54,6 +121,8 @@ section div .text {
   background-color: black;
   border: 7px solid white;
   cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .animation, .btns__btn1:hover, .btns__btn2:hover, .btns__btn3:hover {
@@ -66,8 +135,6 @@ section div .text {
 .btns__btn2 {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
 }
 
 .btns__btn2:hover {
@@ -78,8 +145,6 @@ section div .text {
 .btns__btn3 {
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
 }
 
 .btns__btn3:hover {

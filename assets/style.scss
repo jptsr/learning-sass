@@ -3,40 +3,110 @@
     src: url("D:/Documents/BeCode/Exe/ReproducingLayout/reproducing-layout/resources/bahnschrift.ttf");
 }
 
-$color1: orange;
+
+/* VARIABLES */
+
+
+$color1: rgb(255, 102, 0);
+$color2: rgb(155, 187, 255);
 $colorWhite: white;
 $colorBlack: black;
+$colorGrey: rgb(224, 224, 224);
+
+
+/*---------------------------------------------------- SASS + CSS --------------------------------------------------------------*/
+
 
 body{
     font-family: "typo", sans-serif;
     font-size: 1em;
 }
 
-section{
+.display_flex{
+    display: flex;
+}
+
+.display_flex_timecomments{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.principale{
     width: 400px;
     margin: auto;
+    border: 0.1px solid $colorGrey;
 
-    div{
+    &:hover{
+        border: none;
+        box-shadow: 0 4px 8px 0 rgba(202, 202, 202, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    &__div1{
         margin-bottom: 0;
         .date{
-            text-align: right;
+            text-align: center;
             margin-bottom: 0;
+            position: relative;
             span{
-                z-index: 1;
+                width: 45px;
+                height: 45px;
+                position: absolute;
+                top: -390px;
+                left: 330px;
                 background-color: $color1;
+                border-radius: 50%;
+                z-index: 1;
             }
         }
     }
 
-    div{
-        p{
-            margin-top: 0;
+    &__div2{
+        position: relative;
+
+        .photoWord{
+           position: absolute;
+           background-color: $color2;
+           text-align: center;
+           width: fit-content;
+           height: fit-content;
+           padding: 15px;
+           top: -84px;
         }
-        .text{
-            margin: 30px;
+
+        &__divText{
+            background-color: $colorWhite;
+            padding: 10px 45px 0 45px;
+            z-index: 1;
+            position: relative;
+            top
+
+            p{
+                text-align: justify;
+            }
+        }
+    }
+
+    .timeComments{
+        @extend .display_flex;
+        gap: 35px;
+        color: $colorGrey;
+        padding: 0 45px 45px 45px;
+        margin-top: 0;
+        z-index: 1;
+
+        &__time, &__comments{
+            @extend .display_flex_timecomments;
+            &__icone{
+                filter: grayscale(1);
+            }
         }
     }
 }
+
+
+/*---------------------------------------------------------- CSS ANIMATION ------------------------------------------------------------*/
+
 
 .btns{
     height: fit-content;
@@ -53,6 +123,7 @@ section{
     background-color: $colorBlack;
     border: 7px solid $colorWhite;
     cursor: pointer;
+    transition: all 0.4s ease-in-out;    
 }
 
 .animation{
@@ -64,6 +135,7 @@ section{
 .btns{
     &__btn1{
         @extend .base_custom_btn;
+        
         &:hover{
             @extend .animation;
         }
@@ -72,7 +144,7 @@ section{
     &__btn2{
         @extend .base_custom_btn;
         transform: scale(1);
-        transition: all 0.4s ease-in-out;
+
         &:hover{
             @extend .animation;
             transform: scale(1.2);
@@ -82,7 +154,7 @@ section{
     &__btn3{
         @extend .base_custom_btn;
         transform: translateX(0px);
-        transition: all 0.4s ease-in-out;
+
         &:hover{
             @extend .animation;
             transform: translateX(35px);
