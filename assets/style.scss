@@ -20,6 +20,7 @@ $colorGrey: rgb(224, 224, 224);
 body{
     font-family: "typo", sans-serif;
     font-size: 1em;
+    margin-top: 45px;
 }
 
 .display_flex{
@@ -36,9 +37,13 @@ body{
         border: none;
         box-shadow: 0 4px 8px 0 rgba(202, 202, 202, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+        .principale__div1{
+            filter: opacity(0.5);
+            transition: .2s ease-in-out;
+        }
+
         .principale__div1__img{
             transform: scale(1.1);
-            filter: opacity(0.5);
             transition: .2s ease-in-out;
             overflow: hidden;
         }
@@ -49,9 +54,14 @@ body{
         }
         
         .principale__div2__divText{
-            overflow: visible;
+            //overflow: visible;
             width: fit-content;
             transform: translateY(-100%);
+            transition: .2s ease-in-out;
+        }
+
+        .principale__div2__divText__txtLt{
+            filter: opacity(1);
             transition: .2s ease-in-out;
         }
     }
@@ -59,7 +69,8 @@ body{
     &__div1{
         margin-bottom: 0;
         z-index: -1;
-        overflow: hidden;
+        //overflow: hidden;
+        transition: .2s ease-in-out;
 
         &__img{
             transition: .2s ease-in-out;
@@ -107,9 +118,14 @@ body{
             background-color: $colorWhite;
             padding: 10px 45px 0 45px;
             position: relative;
-            overflow: hidden;
             height: 105px;
             transition: .2s ease-in-out;
+
+            &__txtLt{
+                filter: opacity(0);
+                overflow: hidden;
+                transition: .2s ease-in-out;
+            }
         }
     }
 
@@ -117,15 +133,17 @@ body{
         display: flex;
         gap: 8px;
         align-items: center;
-        padding-top: 20px;
+        padding-top: 40px;
     }
 
     .timeComments{
         @extend .display_flex;
+        background-color: $colorWhite;
         gap: 35px;
         color: $colorGrey;
         padding: 0 45px 45px 45px;
         margin-top: 0;
+        z-index: 2;
 
         &__time, &__comments{
             @extend .display_flex_timecomments;

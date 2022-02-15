@@ -8,6 +8,7 @@
 body {
   font-family: "typo", sans-serif;
   font-size: 1em;
+  margin-top: 45px;
 }
 
 .display_flex, .principale .timeComments {
@@ -29,11 +30,16 @@ body {
           box-shadow: 0 4px 8px 0 rgba(202, 202, 202, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.principale:hover .principale__div1 {
+  -webkit-filter: opacity(0.5);
+          filter: opacity(0.5);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
 .principale:hover .principale__div1__img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-filter: opacity(0.5);
-          filter: opacity(0.5);
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
   overflow: hidden;
@@ -47,7 +53,6 @@ body {
 }
 
 .principale:hover .principale__div2__divText {
-  overflow: visible;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -57,10 +62,18 @@ body {
   transition: .2s ease-in-out;
 }
 
+.principale:hover .principale__div2__divText__txtLt {
+  -webkit-filter: opacity(1);
+          filter: opacity(1);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
 .principale__div1 {
   margin-bottom: 0;
   z-index: -1;
-  overflow: hidden;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 .principale__div1__img {
@@ -116,8 +129,15 @@ body {
   background-color: white;
   padding: 10px 45px 0 45px;
   position: relative;
-  overflow: hidden;
   height: 105px;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.principale__div2__divText__txtLt {
+  -webkit-filter: opacity(0);
+          filter: opacity(0);
+  overflow: hidden;
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
 }
@@ -130,14 +150,16 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .principale .timeComments {
+  background-color: white;
   gap: 35px;
   color: #e0e0e0;
   padding: 0 45px 45px 45px;
   margin-top: 0;
+  z-index: 2;
 }
 
 .principale .timeComments__time__icone, .principale .timeComments__comments__icone {
