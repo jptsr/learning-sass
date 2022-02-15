@@ -26,29 +26,50 @@ body{
     display: flex;
 }
 
-.display_flex_timecomments{
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-
 .principale{
     width: 400px;
     margin: auto;
     border: 0.1px solid $colorGrey;
+    overflow: hidden;
 
     &:hover{
         border: none;
         box-shadow: 0 4px 8px 0 rgba(202, 202, 202, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        .principale__div1__img{
+            transform: scale(1.1);
+            filter: opacity(0.5);
+            transition: .2s ease-in-out;
+            overflow: hidden;
+        }
+
+        .principale__div2__photoWord{
+            transform: translateY(-230%);
+            transition: .2s ease-in-out;
+        }
+        
+        .principale__div2__divText{
+            overflow: visible;
+            width: fit-content;
+            transform: translateY(-100%);
+            transition: .2s ease-in-out;
+        }
     }
 
     &__div1{
         margin-bottom: 0;
+        z-index: -1;
+        overflow: hidden;
 
-        .date{
+        &__img{
+            transition: .2s ease-in-out;
+            position: relative;
+        }
+
+        &__date{
             text-align: center;
             margin-bottom: 0;
-            position: relative;
+            position: absolute;
             span{
                 width: 45px;
                 height: 45px;
@@ -64,28 +85,39 @@ body{
 
     &__div2{
         position: relative;
+        z-index: 1;
+        background-color: $colorWhite;
+        //overflow: hidden;
 
-        .photoWord{
-           position: absolute;
-           background-color: $color2;
-           text-align: center;
-           width: fit-content;
-           height: fit-content;
-           padding: 15px;
-           top: -84px;
+        &__photoWord{
+            position: absolute;
+            background-color: $color2;
+            text-align: center;
+            width: fit-content;
+            height: fit-content;
+            padding: 15px;
+            top: -64px;
+            left: 0px;
+            z-index: 1;
+            transform: translateY(0);
+            transition: .2s ease-in-out;
         }
 
         &__divText{
             background-color: $colorWhite;
             padding: 10px 45px 0 45px;
-            z-index: 1;
             position: relative;
-            top
-
-            p{
-                text-align: justify;
-            }
+            overflow: hidden;
+            height: 105px;
+            transition: .2s ease-in-out;
         }
+    }
+
+    .display_flex_timecomments{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        padding-top: 20px;
     }
 
     .timeComments{
@@ -94,7 +126,6 @@ body{
         color: $colorGrey;
         padding: 0 45px 45px 45px;
         margin-top: 0;
-        z-index: 1;
 
         &__time, &__comments{
             @extend .display_flex_timecomments;

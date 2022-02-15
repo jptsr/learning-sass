@@ -16,20 +16,11 @@ body {
   display: flex;
 }
 
-.display_flex_timecomments, .principale .timeComments__time, .principale .timeComments__comments {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 8px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .principale {
   width: 400px;
   margin: auto;
   border: 0.1px solid #e0e0e0;
+  overflow: hidden;
 }
 
 .principale:hover {
@@ -38,17 +29,53 @@ body {
           box-shadow: 0 4px 8px 0 rgba(202, 202, 202, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.principale__div1 {
-  margin-bottom: 0;
+.principale:hover .principale__div1__img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-filter: opacity(0.5);
+          filter: opacity(0.5);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+  overflow: hidden;
 }
 
-.principale__div1 .date {
-  text-align: center;
+.principale:hover .principale__div2__photoWord {
+  -webkit-transform: translateY(-230%);
+          transform: translateY(-230%);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.principale:hover .principale__div2__divText {
+  overflow: visible;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.principale__div1 {
   margin-bottom: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.principale__div1__img {
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
   position: relative;
 }
 
-.principale__div1 .date span {
+.principale__div1__date {
+  text-align: center;
+  margin-bottom: 0;
+  position: absolute;
+}
+
+.principale__div1__date span {
   width: 45px;
   height: 45px;
   position: absolute;
@@ -61,9 +88,11 @@ body {
 
 .principale__div2 {
   position: relative;
+  z-index: 1;
+  background-color: white;
 }
 
-.principale__div2 .photoWord {
+.principale__div2__photoWord {
   position: absolute;
   background-color: #9bbbff;
   text-align: center;
@@ -74,18 +103,34 @@ body {
   height: -moz-fit-content;
   height: fit-content;
   padding: 15px;
-  top: -84px;
+  top: -64px;
+  left: 0px;
+  z-index: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 .principale__div2__divText {
   background-color: white;
   padding: 10px 45px 0 45px;
-  z-index: 1;
   position: relative;
+  overflow: hidden;
+  height: 105px;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
-.principale__div2__divText top p {
-  text-align: justify;
+.principale .display_flex_timecomments, .principale .timeComments__time, .principale .timeComments__comments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 20px;
 }
 
 .principale .timeComments {
@@ -93,7 +138,6 @@ body {
   color: #e0e0e0;
   padding: 0 45px 45px 45px;
   margin-top: 0;
-  z-index: 1;
 }
 
 .principale .timeComments__time__icone, .principale .timeComments__comments__icone {
